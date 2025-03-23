@@ -5,7 +5,7 @@ This project is a simplified Dropbox-like application built using the MERN stack
 ## Features
 
 - **File Upload and Storage**: Users can upload `.txt`, `.json`, `.jpg`, or `.png` files.
-- **File Management**: Files are stored using multer and saved in an `uploads` directory.
+- **File Management**: Files are stored using multer and saved in an `uploads` directory. 
 - **File Listing**: Retrieve a list of all uploaded files.
 - **File Download**: Download files using a generated link.
 - **File Viewing**: View supported files (text, images, etc.) directly in the browser.
@@ -13,6 +13,7 @@ This project is a simplified Dropbox-like application built using the MERN stack
 - **Data Management**: MongoDB used to store file metadata.
 - **RESTful APIs**: Backend provides RESTful API endpoints.
 - **TypeScript Support**: Ensures type safety and maintainable code.
+- **Docker Support**: Run MongoDB in a Docker container.
 
 ---
 
@@ -21,6 +22,7 @@ This project is a simplified Dropbox-like application built using the MERN stack
 Ensure you have the following installed:
 - Node.js (v18+)
 - MongoDB (local or Docker container)
+- Docker (if applicable)
 - npm or yarn
 
 ---
@@ -29,7 +31,7 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo-url.git
+git clone https://github.com/DivyanshMangla/Dropbox.git
 cd dropbox-project
 ```
 
@@ -46,10 +48,21 @@ npm install
 ```
 
 4. **Configure Environment Variables**
-Create `.env` file in main project directory using the provided `.env.example` template.
+Create `.env` files in both `server` and `client` directories using the provided `.env.example` templates.
 
+Server `.env`:
+```
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/dropbox
+UPLOAD_DIR=./uploads
+```
 
-5. **Start the Application**
+Client `.env`:
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+6. **Start the Application**
 ```bash
 # Start the server
 cd server

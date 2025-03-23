@@ -1,0 +1,25 @@
+.env
+server/uploads/**
+
+# Ignore package-lock.json from both client and server
+client/package-lock.json
+server/package-lock.json
+
+# Node.js dependencies
+client/node_modules/
+server/node_modules/
+
+# Logs
+**/logs
+*.log
+npm-debug.log*
+
+# Environment variables
+**/.env
+.env
+
+# IDE / Editor settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
